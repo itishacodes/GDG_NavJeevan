@@ -8,6 +8,11 @@
   </head>
   <body>
 
+    
+    <!-- Google Translate Widget -->
+    <div id="google_translate_element"></div>
+
+
     <section class="legal-rights-section">
       <h1>📜 Women's Legal Rights</h1>
       <div class="card-container">
@@ -164,6 +169,22 @@
           .join("")
       );
     </script>
+
+      <script>
+        function toggleChatbot() {
+          const chatbot = document.getElementById("chatbot-window");
+          chatbot.style.display = chatbot.style.display === "block" ? "none" : "block";
+        }
+    
+        function googleTranslateElementInit() {
+          new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            includedLanguages: 'en,hi,gu,bn,kn,ml,mr,pa,ta,te,ur,or,as,sd,ne,sa,mai,raj',
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+          }, 'google_translate_element');
+        }
+      </script>
+      <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
     <script src="legal.js"></script>
   </body>
