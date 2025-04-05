@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Monitoring - NavJeevan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        h1, p {
+            margin: 0.5rem 0;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            padding: 2rem;
+        }
+        .monitor-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+        form label {
+            display: block;
+            margin: 0.5rem 0 0.2rem;
+            font-weight: bold;
+        }
+        form input, textarea, select {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            font-size: 16px;
+        
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>NavJeevan - Health Monitoring</h1>
+    <p>Track Your Daily Health Records Easily</p>
+</header>
+<div class="container">
+    <div class="monitor-card">
+        <h2>Vitals Input</h2>
+        <form>
+            <label>Blood Pressure:</label>
+            <input type="text" placeholder="120/80">
+            <label>Blood Sugar Level:</label>
+            <input type="number" placeholder="mg/dL">
+            <label>Body Temperature:</label>
+            <input type="number" placeholder="°C">
+            <label>Heart Rate:</label>
+            <input type="number" placeholder="BPM">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <div class="monitor-card">
+        <h2>Symptoms Tracker</h2>
+        <form>
+            <label>Select Symptom:</label>
+            <select>
+                <option>Headache</option>
+                <option>Fever</option>
+                <option>Cough</option>
+                <option>Stomach Pain</option>
+                <option>Others</option>
+            </select>
+            <label>Date:</label>
+            <input type="date">
+            <label>Time:</label>
+            <input type="time">
+            <textarea placeholder="Additional Details..." rows="4"></textarea>
+            <button>Save Symptoms</button>
+        </form>
+    </div>
+
+    <div class="monitor-card">
+        <h2>BMI Calculator</h2>
+        <form>
+            <label>Height (cm):</label>
+            <input type="number" placeholder="Height in cm">
+            <label>Weight (kg):</label>
+            <input type="number" placeholder="Weight in kg">
+            <button type="button" onclick="calculateBMI()">Calculate BMI</button>
+            <p id="bmi-result"></p>
+        </form>
+    </div>
+
+
+</div>
+<script>
+    function calculateBMI() {
+        const height = parseFloat(document.querySelector('[placeholder="Height in cm"]').value) / 100;
+        const weight = parseFloat(document.querySelector('[placeholder="Weight in kg"]').value);
+        if (height && weight) {
+            const bmi = (weight / (height * height)).toFixed(2);
+            document.getElementById('bmi-result').innerText = `Your BMI: ${bmi}`;
+        } else {
+            document.getElementById('bmi-result').innerText = "Please enter valid height and weight.";
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NavJeevan - Empowering Farmers</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,hi,mr,te',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+            color: #333;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: #4CAF50;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .navbar nav a {
+            margin-left: 20px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        .navbar nav a:hover {
+            color: #d4edda;
+        }
+        /* .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background: url('assets/img/farmers.jpg') no-repeat center center/cover;
+            color: white;
+            box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
+        }
+        .hero h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        } */
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #388E3C;
+        }
+        .feature-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            justify-content: center;
+            width: 1500px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+        .feature {
+            background: white;
+            padding: 30px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        
+        .feature:hover {
+            transform: scale(1.1);
+            background: #e8f5e9;
+        }
+        .feature i {
+            font-size: 60px;
+            margin-bottom: 20px;
+            color: #4CAF50;
+
+
+        }
+        .feature:nth-child(1) i { color: #FF5733; }
+        .feature:nth-child(2) i { color: #33A2FF; }
+        .feature:nth-child(3) i { color: #FFC300; }
+        .feature:nth-child(4) i { color: #8D33FF; }
+        .feature:nth-child(5) i { color: #659c26; }
+        .feature:nth-child(6) i { color: #ec0b0b; }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <h1>NavJeevan</h1>
+            <nav>
+                <a href="#health">Health Hub</a>
+                <a href="#monitoring">Health Monitoring</a>
+                <a href="#consultation">Doctor Consultation</a>
+                <a href="#reminder">Medicine Reminder</a>
+            </nav>
+            <div id="google_translate_element"></div>
+        </div>
+    </header>
+
+    <!-- <section class="hero">
+        <h2>Empowering Rural Communities for Better Health</h2>
+        <p>Your One-Stop Platform for Health Information, Monitoring, and Consultation</p>
+        <a href="#health" class="btn">Explore Now</a>
+    </section> -->
+
+    <div class="feature-container">
+        <section id="health" class="feature">
+            <i class="fas fa-heartbeat"></i>
+            <h3>Common Diseases</h3>
+            <p>Information about diseases like fever, cold, diabetes, and more with natural remedies.</p>
+            <a href="health_info-cd.html" class="btn">View Disease</a>
+        </section>
+
+        <section id="monitoring" class="feature">
+            <i class="fas fa-notes-medical"></i>
+            <h3>Health Tips</h3>
+            <p>Daily tips for a healthy lifestyle including balanced diet, hygiene, and exercises.</p>
+            <a href="health_info-ht.html" class="btn">Get Tips</a>
+        </section>
+
+        <section id="consultation" class="feature">
+            <i class="fas fa-briefcase-medical"></i>
+            <h3>First Aid</h3>
+            <p>Guidelines on how to provide first aid for common injuries and illnesses.</p>
+            <a href="health_info-fa.html" class="btn">View Guides</a>
+        </section>
+
+        <section id="reminder" class="feature">
+            <i class="fas fa-user-md"></i>
+            <h3>Government Health Schemes</h3>
+            <p>"Know Government Schemes, Secure Your Health!".</p>
+            <a href="health_info-gs.html" class="btn">Explore Schemes</a>
+        </section>
+
+        <section id="reminder" class="feature">
+            <i class="fas fa-pills"></i>
+            <h3>Medication Guide</h3>
+            <p>Details on medicines, usage, and side effects for common health issues.</p>
+            <a href="health_info-mg.html" class="btn">View Medications</a>
+        </section>
+
+        <section id="reminder" class="feature">
+            <i class="fas fa-apple-alt"></i>
+            <h3>Nutrition Plans</h3>
+            <p>Balanced diet plans suitable for farmers to maintain health and energy.</p>
+            <a href="health_info-np.html" class="btn">Get Nutrition Plans</a>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 ApnaKhet | Empowering Farmers for a Better Tomorrow</p>
+    </footer>
+</body>
+</html>

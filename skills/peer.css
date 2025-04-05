@@ -1,0 +1,289 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: #f6f4ef;
+  color: #2e382e;
+  line-height: 1.6;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #2c3e50;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.navbar a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 17px;
+  transition: all 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #f0c674;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 100px auto 50px;
+  padding: 20px;
+}
+
+/* Headings */
+h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+p {
+  font-size: 16px;
+  color: #5f4b32;
+}
+
+/* Sections */
+section {
+  padding: 60px 20px;
+  margin-bottom: 40px;
+}
+
+/* Forum */
+.discussion-forum {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Question Box */
+.question-box {
+  background: #fdfaf5;
+  padding: 30px;
+  border-radius: 12px;
+  margin: 20px auto;
+  max-width: 600px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.question-box textarea {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  font-size: 16px;
+  resize: vertical;
+}
+
+.question-box button {
+  margin-top: 15px;
+  background: #27ae60;
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.question-box button:hover {
+  background: #1e8449;
+}
+
+/* Questions */
+#questionsList {
+  max-width: 700px;
+  margin: 30px auto;
+  text-align: left;
+}
+
+.question {
+  background: #ffffff;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* Reply Box */
+.reply-box input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.reply-box button {
+  background: #2c3e50;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  margin-top: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.reply-box button:hover {
+  background: #1a252f;
+}
+
+/* Mentor Connect */
+.mentor-connect {
+  background: #eef2ed;
+  padding: 60px 30px;
+}
+
+.mentor-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.mentor {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  width: 250px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: 0.3s ease;
+}
+
+.mentor:hover {
+  transform: translateY(-5px);
+}
+
+.mentor button {
+  background: #3e8e41;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  width: 100%;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.mentor button:hover {
+  background: #2c6b2f;
+}
+
+/* Success Stories */
+.success-stories {
+  background: #fefefe;
+  padding: 60px 20px;
+}
+
+.carousel-container {
+  max-width: 700px;
+  margin: auto;
+  position: relative;
+}
+
+.carousel {
+  overflow: hidden;
+  width: 100%;
+}
+
+.story {
+  display: none;
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.story.active {
+  display: block;
+}
+
+button.prev,
+button.next {
+  background: #3d5229;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 22px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 2;
+}
+
+button.prev {
+  left: -60px;
+}
+button.next {
+  right: -60px;
+}
+
+button.prev:hover,
+button.next:hover {
+  background: #567438;
+}
+.edit-btn {
+  background-color: #3498db;
+  border: none;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 8px;
+  font-size: 0.9rem;
+}
+
+.edit-btn:hover {
+  background-color: #2980b9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .mentor-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .carousel-container {
+    padding: 0 20px;
+  }
+
+  button.prev,
+  button.next {
+    left: 5px;
+    right: 5px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar a {
+    padding: 10px 0;
+  }
+}

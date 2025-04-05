@@ -1,0 +1,259 @@
+<!-- ApnaKhet Project -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NavJeevan - Farmer Education Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,hi,mr,te',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+      
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: #4CAF50;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+             margin-bottom: 2rem;
+        }
+        .navbar nav a {
+            margin-left: 20px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        .navbar nav a:hover {
+            color: #d4edda;
+        }
+        .container {
+            width: 90%;
+            margin: auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            text-align: left;
+            margin-bottom: 3rem;
+        }
+
+        .button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #61da25;
+}
+
+
+        .item-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+        .item {
+            padding: 2.5rem;
+            background-color: #e8f5e9;
+            border-radius: 15px;
+            text-align: center;
+            cursor: pointer;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.4s ease, background 0.4s ease;
+            font-weight: bold;
+        }
+        .item:hover {
+            background-color: #c8e6c9;
+            transform: scale(1.1);
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+            z-index: 1000;
+            text-align: center;
+            width: 550px;
+            opacity: 0;
+            transition: all 0.4s ease-in-out;
+        }
+        .modal.show {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+            display: block;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 999;
+        }
+        .overlay.show {
+            display: block;
+        }
+        .close-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 1.5rem;
+        }
+        .close-icon {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            cursor: pointer;
+            font-size: 2rem;
+            color: #4CAF50;
+        }
+    </style>
+</head>
+<body>
+<!-- <header>
+    <h1>ApnaKhet - Farmer Education Hub</h1>
+    <p>Select a topic to learn more</p>
+</header> -->
+
+<header>
+  <div class="navbar">
+      <h1>NavJeevan - Farmer Education Hub</h1>
+      <div id="google_translate_element"></div>
+  </div>
+</header>
+
+<div class="container">
+    <h1>Education Topics</h1>
+    <div class="item-list">
+      <div class="item" onclick="showModal('Soil Preparation Basics', 'Good soil preparation helps crops grow better and increases farm yield. Follow these simple steps to prepare the soil properly:<br><br> 1. <b>Test Your Soil:</b> Check soil health before planting. Use a soil testing kit or take a sample to an agricultural center. Adjust soil pH if needed (add lime for acidic soil or sulfur for alkaline soil).<br><br> 2. <b>Plow or Till the Land:</b> Loosen the soil to improve air and water flow. Remove weeds and old crop remains. Avoid over-tilling to prevent soil erosion.<br><br> 3. <b>Add Organic Matter:</b> Mix compost, manure, or dried leaves into the soil. Organic matter improves soil fertility and helps retain moisture.<br><br> 4. <b>Level the Soil:</b> Use a rake or leveller to smooth the field. Leveling prevents water from collecting in one place.<br><br> 5. <b>Rotate Crops:</b> Change crops each season to maintain soil nutrients. Legumes (like beans) add natural nitrogen to the soil.<br><br> 6. <b>Water the Soil Before Planting:</b> Keep the soil slightly moist before sowing seeds. Avoid too much water, as it can wash away nutrients.')">Soil Preparation Basics</div>
+      <div class="item" onclick="showModal('Organic Farming Techniques', 'Follow these simple steps for better organic farming techniques:<br><br> 1. <b>Soil Health Improvement:</b> Use compost (cow dung, kitchen waste, plant residues) to enrich the soil. Rotate crops to maintain soil nutrients. Use mulching (dry leaves, straw) to retain soil moisture and prevent weeds.<br><br> 2. <b>Natural Fertilizers:</b> Vermicompost (earthworm compost) improves soil fertility. Cow dung manure is rich in nutrients for crops. Use green manure (like legume plants) to increase nitrogen in the soil.<br><br> 3. <b>Pest and Disease Management:</b> Use neem oil spray to prevent pests. Grow marigold around crops to repel insects. Mix garlic, ginger, and chili paste with water and spray to keep pests away.<br><br> 4. <b>Water Management:</b> Use drip irrigation to save water. Collect and use rainwater for irrigation. Avoid overwatering to prevent fungal diseases.<br><br> 5. <b>Weed Control:</b> Hand-pull weeds instead of using chemical weed killers. Use cover crops (like clover or mustard) to suppress weeds. Apply mulching to reduce weed growth.')">Organic Farming Techniques</div>
+      <div class="item" onclick="showModal('Sewing for Beginners', 'Follow these simple steps for Sewing for Beginners: <br><br> 1. <b>Basic Sewing Tools:</b> Needles – Hand sewing or machine needles. Thread – Cotton or polyester, depending on the fabric. Fabric – Start with cotton; it’s easy to work with. Scissors – Fabric scissors for clean cuts. Measuring Tape – For accurate measurements. Pins & Pin Cushion – To hold fabric in place. Seam Ripper – To remove mistakes.<br><br>2. <b>Basic Stitches:</b> Running Stitch – Simple stitch for basic sewing. Backstitch – Stronger than a running stitch, great for repairs. Whip Stitch – Used for hemming edges. Overcast Stitch – Prevents fabric edges from fraying.<br><br>3. <b>How to Thread a Needle:</b> Cut the thread (about 18 inches). Insert one end through the needle’s eye. Tie a small knot at the end.<br><br>4. <b>Sewing Machine Basics:</b> Learn how to thread the machine (follow the guide in the manual). Start with straight stitches on a scrap fabric. Keep fabric steady and use the pedal smoothly.<br><br>5. <b>Easy First Projects:</b> Handkerchiefs – Simple square fabric with a hem. Tote Bag – Basic rectangular shape with handles. Pillowcase – Just two pieces of fabric sewn together. Apron – A simple beginner-friendly project.')">Sewing for Beginners</div>
+      <div class="item" onclick="showModal('Crop Management Tips', 'Follow these simple steps for Crop Management Tips <br><br> 1. <b>Soil Preparation & Health:</b> Test soil before planting to check nutrient levels. Use organic manure (compost, vermicompost, cow dung) to enrich the soil. Rotate crops to maintain soil fertility.<br><br>2. <b>Seed Selection & Sowing:</b> Choose high-quality, disease-resistant seeds. Soak seeds in organic solutions (like neem extract) before sowing for better germination. Maintain proper spacing between plants for good air circulation and sunlight.<br><br>3. <b>Water Management:</b> Use drip irrigation or sprinkler systems to save water. Avoid overwatering to prevent root rot and fungal diseases. Collect and use rainwater for irrigation.<br><br>5. <b>Pest & Disease Control:</b> Use natural pesticides like neem oil spray or garlic-ginger-chili spray. Grow companion plants (e.g., marigold near vegetables) to keep pests away. Regularly inspect crops for signs of diseases and remove infected plants early.<br><br>6. <b>Fertilization & Nutrient Management:</b> Use organic fertilizers like cow dung, compost, and bone meal for better growth. Apply fertilizers at the right time (before flowering & fruiting stages). Avoid overuse of chemical fertilizers to prevent soil degradation.')">Crop Management Tips</div>
+      <div class="item" onclick="showModal('Smart Irrigation Methods', 'Follow these simple steps for Smart Irrigation Methods <br><br> 1. <b>Drip Irrigation:</b> Delivers water directly to plant roots through small pipes. Reduces water wastage and prevents overwatering. Ideal for vegetables, fruits, and row crops.<br><br>2. <b>Sprinkler Irrigation:</b> Sprays water like natural rainfall using rotating nozzles. Suitable for large fields, wheat, and pulses. Helps maintain uniform water distribution.<br><br>3. <b>Sensor-Based Irrigation:</b> Uses moisture sensors to check soil dryness and water plants only when needed. Reduces water wastage and prevents crop damage. Can be automated for remote monitoring.<br><br>4. <b>Rainwater Harvesting for Irrigation:</b> Collects and stores rainwater for later use. Reduces dependence on groundwater and borewells. Helps during droughts and water shortages.<br><br>5. <b>Solar-Powered Irrigation:</b> Uses solar energy to pump water, reducing electricity costs. Ideal for rural areas with limited power supply. Works well with drip and sprinkler systems.<br><br>6. <b>Fogging & Misting Irrigation:</b> Creates fine water droplets to maintain humidity. Useful for greenhouses, nurseries, and delicate crops. Prevents heat stress and improves plant growth.')">Smart Irrigation Methods</div>
+      <div class="item" onclick="showModal('Pest Control Solutions', 'Follow these simple steps for Pest Control Solutions <br> 1. <b>Neem-Based Sprays:</b> Mix neem oil with water and spray on crops to repel insects. Effective against aphids, caterpillars, and whiteflies. Safe for plants and does not harm beneficial insects.<br>2. <b>Garlic-Ginger-Chili Spray:</b> Blend garlic, ginger, and chili with water and strain the liquid. Acts as a natural insect repellent for crops. Useful against mites, mealybugs, and caterpillars.<br>3. <b>Companion Planting:</b> Grow marigold, basil, or mint near crops to keep pests away. Attracts beneficial insects like ladybugs that eat harmful pests. Reduces the need for chemical pesticides.<br>4. <b>Sticky Traps & Light Traps:</b> Use yellow sticky traps to catch flying insects like aphids. Place light traps in fields at night to attract and trap pests. Helps reduce pest populations without chemicals.<br>5. <b>Organic Soap Spray:</b> Mix mild soap and water and spray on plant leaves. Destroys soft-bodied pests like aphids and whiteflies. Wash off after a few hours to prevent leaf damage.<br>6. <b>Biological Pest Control:</b> Release predatory insects like ladybugs to eat aphids. Use parasitic wasps to control caterpillars and borers. A natural way to maintain pest balance in fields.<br>7. <b>Ash and Turmeric Powder:</b> Sprinkle wood ash on plants to prevent caterpillars and slugs. Dust plants with turmeric powder to repel ants and fungal infections. Safe for crops and improves soil health.<br>8. <b>Crop Rotation & Field Hygiene:</b> Rotate crops every season to break pest cycles. Remove infected plants and weeds to stop pests from spreading. Keep fields clean and well-maintained.')">Pest Control Solutions</div>
+      <div class="item" onclick="showModal('Fertilizer Usage Guide', 'Follow these simple steps for Fertilizer Usage Guide <br><br> 1. <b>Types of Fertilizers:</b><br><b>Organic Fertilizers</b> (Natural & Eco-Friendly) - Compost, Vermicompost, Cow Dung & Manure, Bone Meal, Wood Ash.<br><b>Chemical Fertilizers</b> (Quick Nutrient Boost) - Nitrogen (N) Fertilizers (Urea, Ammonium Sulfate), Phosphorus (P) Fertilizers (DAP, Single Super Phosphate), Potassium (K) Fertilizers (MOP, Potassium Sulfate), NPK (Balanced Fertilizer).<br><br>2. <b>How to Apply Fertilizers:</b> Broadcasting, Top Dressing, Foliar Spray, Drip Irrigation, Side Dressing.<br><br>3. <b>Best Time to Apply Fertilizers:</b> Before Sowing, After Germination, Before Flowering, During Fruiting.<br><br>4. <b>Fertilizer Dosage & Precautions:</b> Avoid over-fertilizing, water after application, test soil before use, use organic fertilizers for soil health.')">Fertilizer Usage Guide</div>
+      <div class="item" onclick="showModal('Kitchen Gardening Tips', 'Follow these simple steps for Kitchen Gardening Tips: <br><br> 1. <b>Choosing the Right Spot:</b> Select a sunny location with 4–6 hours of sunlight, ensure good air circulation and drainage. <br><br>2. <b>Selecting the Right Containers:</b> Use pots, grow bags, or wooden boxes with drainage holes; reuse old buckets and bottles for eco-friendly gardening. <br><br>3. <b>Choosing Easy-to-Grow Plants:</b> Vegetables (Tomatoes, spinach, carrots), Herbs (Mint, coriander, basil), Fruits (Lemons, strawberries, chilies).<br><br>4. <b>Preparing the Soil:</b> Use garden soil, compost, and cocopeat; add organic manure for enrichment. <br><br>5. <b>Watering Tips:</b> Water early morning or evening, avoid overwatering, use a spray bottle or watering can. <br><br>6. <b>Organic Pest Control:</b> Use neem oil spray, garlic-chili-ginger spray, plant marigold or basil for pest repellence.<br><br>7. <b>Regular Maintenance:</b> Trim dry leaves, support climbing plants, rotate crops.')">Kitchen Gardening Tips</div>
+      <div class="item" onclick="showModal('How to Cook Healthy Meals', 'Follow these simple steps for How to Cook Healthy Meals <br><br> 1. <b>Choose Fresh & Whole Ingredients:</b> Use fresh vegetables, fruits, whole grains, and lean proteins; avoid processed foods. <br><br>2. <b>Use Healthy Cooking Methods:</b> Steam, grill, bake, stir-fry, or poach to retain nutrients and minimize unhealthy fats. <br><br>3. <b>Use Less Oil & Choose Healthy Fats:</b> Opt for olive oil, coconut oil, or mustard oil; avoid deep-frying. <br><br>4. <b>Balance Your Meals:</b> Include proteins, fiber-rich foods, and healthy carbs like brown rice and quinoa. <br><br>5. <b>Reduce Salt & Sugar:</b> Use herbs and spices instead of excess salt, sweeten naturally with fruits or honey. <br><br>6. <b>Hydrate & Include Healthy Drinks:</b> Drink water, fresh juices, and herbal teas instead of sugary sodas. <br><br>7. <b>Meal Prep for Convenience:</b> Pre-chop vegetables, cook grains in batches, and store healthy snacks.')">How to Cook Healthy Meals</div>
+      <div class="item" onclick="showModal('Sustainable Farming Ideas', 'Follow these simple steps for Sustainable Farming Ideas <br><br> 1. <b>Crop Rotation:</b> Grow different crops each season to improve soil fertility and prevent pests. <br><br>2. <b>Organic Farming:</b> Use natural compost and manure; avoid synthetic pesticides. <br><br>3. <b>Drip Irrigation & Rainwater Harvesting:</b> Saves water by delivering moisture directly to plant roots and collecting rainwater. <br><br>4. <b>Agroforestry:</b> Plant trees alongside crops to improve biodiversity and prevent soil erosion. <br><br>5. <b>Natural Pest Control:</b> Use natural predators and companion planting instead of chemical pesticides. <br><br>6. <b>Use Renewable Energy:</b> Install solar-powered water pumps and use biogas for farm operations. <br><br>7. <b>Vermicomposting & Composting:</b> Convert waste into organic fertilizer to improve soil structure. <br><br>8. <b>Integrated Farming System (IFS):</b> Combine crop cultivation with livestock farming for better resource utilization.')">Sustainable Farming Ideas</div>
+    </div>
+</div>
+
+<div class="container">
+  <h1>Education Video Tutorials</h1>
+
+  <br/>
+
+<div class="container">
+  <h2 style="display: inline;">Soil Preparation Basics -</h2> 
+<a href="https://youtu.be/zbgU0_PhyIk?si=srPO1sviW1_xf7ig" class="button">Watch Here</a>
+</div>
+
+<div class="container">
+<h2 style="display: inline;">Organic Farming Techniques -</h2> 
+<a href="https://youtu.be/lRyXlvIJFWI?si=KYKdp3zJeoKBEbVe" class="button">Watch Here</a>
+</div>
+
+<div class="container">
+<h2 style="display: inline;">Sewing for Beginners -</h2> 
+<a href="https://youtu.be/hVw1WVacVZo?si=hfvYi8cnMsEvI8T7" class="button">Watch Here</a>
+</div>
+
+<div class="container">
+<h2 style="display: inline;">Crop Management Tips -</h2> 
+<a href="https://youtu.be/P-cPw-wOABo?si=UDzXU85jyey4ggPk" class="button">Watch Here</a>
+</div>
+
+<div class="container">
+<h2 style="display: inline;">Smart Irrigation Methods -</h2> 
+<a href="https://youtu.be/Ulf8E1XnhgI?si=gL1tFQlQGlvuzzIN" class="button">Watch Here</a>
+</div>
+
+<div class="container">
+<h2 style="display: inline;">Pest Control Solutions-</h2> 
+<a href="https://youtu.be/6tH0iIsN1ag?si=P31IRQz7HIW2dA8p" class="button">Watch Here</a>
+</div>
+
+<div class="container">
+<h2 style="display: inline;">Fertilizer Usage Guide -</h2> 
+<a href="https://youtu.be/M4wxhjYbl9E?si=mdB-kImA9rY1ze-8" class="button">Watch Here</a>
+</div>
+
+<div class="container">
+<h2 style="display: inline;">Kitchen Gardening Tips -</h2> 
+<a href="https://youtu.be/6E9K46Up3co?si=g01nEl8QZ8yE-_g9" class="button">Watch Here</a>
+</div>
+
+<div class="container">
+<h2 style="display: inline;">How to Cook Healthy Meals -</h2> 
+<a href="https://www.youtube.com/results?search_query=How+to+Cook+Healthy+Meals" class="button">Watch Here</a>
+</div>
+
+<div class="container">
+<h2 style="display: inline;">Sustainable Farming Ideas -</h2> 
+<a href="https://www.youtube.com/results?search_query=Sustainable+Farming+Ideas+videos" class="button">Watch Here</a>
+</div>
+
+
+  
+
+<div class="overlay" id="overlay" onclick="closeModal()"></div>
+<div class="modal" id="modal">
+    <span class="close-icon" onclick="closeModal()">&times;</span>
+    <h2 id="modal-title"></h2>
+    <p id="modal-content"></p>
+    <button class="close-btn" onclick="closeModal()">Close</button>
+</div>
+<script>
+    function showModal(title, content) {
+        document.getElementById('modal-title').innerText = title;
+        document.getElementById('modal-content').innerHTML = '<b>Guideline:</b> ' + content;
+        document.getElementById('modal').classList.add('show');
+        document.getElementById('overlay').classList.add('show');
+    }
+    function closeModal() {
+        document.getElementById('modal').classList.remove('show');
+        document.getElementById('overlay').classList.remove('show');
+    }
+</script>
+</body>
+</html>

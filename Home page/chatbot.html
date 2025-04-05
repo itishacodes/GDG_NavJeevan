@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot with Speech Input & Output</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('your-galaxy-theme.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+        .chat-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 350px;
+            height: 450px;
+            background: #f7f7f7;
+            border-radius: 15px;
+            display: none;
+            flex-direction: column;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        .chat-header {
+            background: hsl(240, 1%, 34%);
+            color: white;
+            padding: 10px;
+            text-align: center;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .chat-body {
+            flex: 1;
+            padding: 10px;
+            overflow-y: auto;
+            max-height: 350px;
+            color: white;
+        }
+        .chat-footer {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background: hsl(240, 1%, 34%);
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+        .chat-footer input {
+            flex: 1;
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+        }
+        .chat-footer button {
+            padding: 8px;
+            margin-left: 5px;
+            background: #5a5aff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .mic-button, .sound-button {
+            margin-left: 5px;
+            background: red;
+            color: white;
+            padding: 8px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .sound-button {
+            background: green;
+        }
+        .chat-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: #5a5aff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .chat-icon img {
+            width: 40px;
+            height: 40px;
+        }
+        .user-message {
+            text-align: right;
+            background: #4a4aff;
+            padding: 5px;
+            border-radius: 10px;
+            margin: 5px;
+            display: inline-block;
+            max-width: 80%;
+        }
+        .bot-message {
+            text-align: left;
+            background: hsl(240, 1%, 34%);
+            padding: 5px;
+            border-radius: 10px;
+            margin: 5px;
+            display: inline-block;
+            max-width: 80%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="chat-icon" onclick="toggleChat()">
+        <img src="chatbot-icon.png" alt="Chat">
+    </div>
+
+    <div class="chat-container" id="chatContainer">
+        <div class="chat-header">
+            <span>How can I help you?</span>
+            <div>
+                <button class="sound-button" onclick="toggleSpeechOutput()">🔊</button>
+                <button onclick="toggleChat()" style="background: transparent; border: none; color: white; font-size: 18px; cursor: pointer; margin-left: 8px;">✖️</button>
+            </div>
+        </div>
+        <div class="chat-body" id="chatBody"></div>
+        <div class="chat-footer">
+            <input type="text" id="userInput" placeholder="Ask me anything..." onkeypress="handleKeyPress(event)">
+            <button onclick="sendMessage()">Send</button>
+            <button class="mic-button" onclick="startSpeechRecognition()">🎤</button>
+        </div>
+    </div>
+
+    <script>
+        const apiKey = "AIzaSyBuRtZc8Q4KpPIsrfKL1q70vWgPj7x04zI";  
+        const chatContainer = document.getElementById('chatContainer');
+        const chatBody = document.getElementById('chatBody');
+        const userInput = document.getElementById('userInput');
+        let speechOutputEnabled = true;
+
+        function toggleChat() {
+            chatContainer.style.display = (chatContainer.style.display === 'none' || chatContainer.style.display === '') ? 'flex' : 'none';
+        }
+
+        function handleKeyPress(event) {
+            if (event.key === "Enter") {
+                sendMessage();
+            }
+        }
+
+        async function sendMessage() {
+            let inputText = userInput.value.trim();
+            if (inputText === "") return;
+
+            chatBody.innerHTML += `<div class="user-message">${inputText}</div>`;
+            userInput.value = "";
+            chatBody.scrollTop = chatBody.scrollHeight;
+
+            let responseText = await getChatbotResponse(inputText);
+
+            chatBody.innerHTML += `<div class="bot-message">${responseText}</div>`;
+            chatBody.scrollTop = chatBody.scrollHeight;
+
+            if (speechOutputEnabled) {
+                speakText(responseText);
+            }
+        }
+
+        async function getChatbotResponse(inputText) {
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
+            
+            const payload = {
+                contents: [{
+                    parts: [{ text: `You are an AI chatbot assisting users on a rural empowerment platform. 
+                    
+                    Question: ${inputText}` }]
+                }],
+                generationConfig: {
+                    temperature: 1,
+                    topP: 0.95,
+                    topK: 40,
+                    maxOutputTokens: 512,
+                    responseMimeType: "text/plain"
+                }
+            };
+
+            try {
+                let response = await fetch(url, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(payload)
+                });
+
+                let data = await response.json();
+                return data?.candidates?.[0]?.content?.parts?.[0]?.text || "Sorry, I couldn't understand that.";
+            } catch (error) {
+                console.error("Error:", error);
+                return "Oops! Something went wrong.";
+            }
+        }
+
+        function startSpeechRecognition() {
+            if (!('webkitSpeechRecognition' in window)) {
+                alert("Your browser does not support speech recognition. Try using Chrome.");
+                return;
+            }
+
+            let recognition = new webkitSpeechRecognition();
+            recognition.continuous = false;
+            recognition.interimResults = false;
+            recognition.lang = 'en-US';
+
+            recognition.start();
+
+            recognition.onresult = function (event) {
+                let transcript = event.results[0][0].transcript;
+                userInput.value = transcript;  
+                sendMessage();  
+            };
+
+            recognition.onerror = function (event) {
+                console.error("Speech recognition error:", event.error);
+            };
+        }
+
+        function speakText(text) {
+            let utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'en-US';
+            speechSynthesis.speak(utterance);
+        }
+
+        function toggleSpeechOutput() {
+            speechOutputEnabled = !speechOutputEnabled;
+            document.querySelector('.sound-button').textContent = speechOutputEnabled ? "🔊" : "🔇";
+        }
+    </script>
+
+</body>
+</html>

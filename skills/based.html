@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project-Based Learning</title>
+    <link rel="stylesheet" href="based.css" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+      }
+      .project-card {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin: 10px;
+        display: inline-block;
+        width: 250px;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+      }
+      .join-btn {
+        background-color: #4caf50;
+        color: white;
+        padding: 5px 10px;
+        border: none;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+      .modal {
+        display: none;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+      .modal-content {
+        background-color: white;
+        margin: 10% auto;
+        padding: 20px;
+        width: 50%;
+        border-radius: 8px;
+      }
+      .close {
+        cursor: pointer;
+        color: red;
+        font-size: 20px;
+        float: right;
+      }
+      input {
+        display: block;
+        width: 90%;
+        margin: 10px auto;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      .apply-btn,
+      .submit-btn {
+        background-color: #007bff;
+        color: white;
+        padding: 8px 15px;
+        border: none;
+        cursor: pointer;
+        margin: 10px auto;
+        display: block;
+      }
+      .apply-btn:hover,
+      .submit-btn:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+
+    <h1>Project-Based Learning</h1>
+
+    <!-- Project List -->
+    <div id="projectContainer"></div>
+
+    <!-- Modal for Project Details -->
+    <div id="projectModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 id="modalProjectTitle"></h2>
+        <p id="modalProjectDescription"></p>
+        <p><strong>Salary:</strong> <span id="modalProjectSalary"></span></p>
+        <p>
+          <strong>Prerequisites:</strong>
+          <span id="modalProjectPrerequisites"></span>
+        </p>
+
+        <!-- Apply Button -->
+        <button class="apply-btn" id="openFormBtn">Apply Now</button>
+
+        <!-- Application Form -->
+        <form id="applyForm" style="display: none">
+          <h3>Apply for this Project</h3>
+          <input
+            type="text"
+            id="applicantName"
+            placeholder="Your Name"
+            required
+          />
+          <input
+            type="number"
+            id="applicantAge"
+            placeholder="Your Age"
+            required
+          />
+          <input
+            type="text"
+            id="applicantSkills"
+            placeholder="Your Skills"
+            required
+          />
+          <input
+            type="tel"
+            id="applicantPhone"
+            placeholder="Phone Number"
+            required
+          />
+          <input
+            type="email"
+            id="applicantEmail"
+            placeholder="Email"
+            required
+          />
+          <button type="submit" class="submit-btn">Submit Application</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Create New Project Section -->
+    <h2>Create a New Project</h2>
+    <input type="text" id="projectTitle" placeholder="Project Title" />
+    <input
+      type="text"
+      id="projectDescription"
+      placeholder="Project Description"
+    />
+    <input type="text" id="projectSalary" placeholder="Salary" />
+    <input type="text" id="projectPrerequisites" placeholder="Prerequisites" />
+    <button class="submit-btn">Submit Project</button>
+
+    <script src="based.js"></script>
+  </body>
+</html>

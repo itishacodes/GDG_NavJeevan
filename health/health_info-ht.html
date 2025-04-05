@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrition Plan & First Aid - NavJeevan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        .container {
+             width: 90%;
+            margin: auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            text-align: left;
+            margin-bottom: 3rem;
+        }
+        .item-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+        .item {
+            padding: 2.5rem;
+            background-color: #e8f5e9;
+            border-radius: 15px;
+            text-align: center;
+            cursor: pointer;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.4s ease, background 0.4s ease;
+            font-weight: bold;
+        }
+        .item:hover {
+            background-color: #c8e6c9;
+            transform: scale(1.1);
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+            z-index: 1000;
+            text-align: center;
+            width: 550px;
+            opacity: 0;
+            transition: all 0.4s ease-in-out;
+        }
+        .modal.show {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+            display: block;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 999;
+        }
+        .overlay.show {
+            display: block;
+        }
+        .close-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 1.5rem;
+        }
+        .close-icon {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            cursor: pointer;
+            font-size: 2rem;
+            color: #4CAF50;
+        }
+        b {
+            color: #2e7d32;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>NavJeevan - Nutrition Plan, First Aid & Health Tips</h1>
+        <p>Select an option to view detailed information</p>
+    </header>
+    <div class="container">
+        <h2>Health Tips</h2>
+        <div class="item-list">
+            <div class="item" onclick="showModal('Balanced Diet', 'Eat a variety of foods including fruits, vegetables, lean proteins, and whole grains.')">Balanced Diet</div>
+            <div class="item" onclick="showModal('Hydration', 'Drink at least 8 glasses of water daily to maintain proper hydration.')">Hydration</div>
+            <div class="item" onclick="showModal('Exercise', 'Engage in at least 30 minutes of moderate physical activity every day.')">Exercise</div>
+            <div class="item" onclick="showModal('Sleep', 'Aim for 7-9 hours of quality sleep each night for optimal health.')">Sleep</div>
+            <div class="item" onclick="showModal('Hygiene', 'Maintain good personal hygiene to prevent infections and diseases.')">Hygiene</div>
+            <div class="item" onclick="showModal('Stress Management', 'Practice relaxation techniques such as meditation and deep breathing.')">Stress Management</div>
+            <div class="item" onclick="showModal('Posture', 'Maintain good posture while sitting and standing to avoid back pain.')">Posture</div>
+            <div class="item" onclick="showModal('Mental Health', 'Engage in social activities and hobbies to keep your mind active and healthy.')">Mental Health</div>
+            <div class="item" onclick="showModal('Sun Protection', 'Use sunscreen and protective clothing to prevent skin damage from UV rays.')">Sun Protection</div>
+            <div class="item" onclick="showModal('Regular Checkups', 'Visit your doctor regularly for preventive health checkups.')">Regular Checkups</div>
+            <div class="item" onclick="showModal('Avoid Smoking', 'Avoid smoking and excessive alcohol consumption for long-term health benefits.')">Avoid Smoking</div>
+            <div class="item" onclick="showModal('Healthy Snacking', 'Choose healthy snacks like nuts and fruits instead of processed junk food.')">Healthy Snacking</div>
+        </div>
+    </div>
+    <div class="overlay" id="overlay" onclick="closeModal()"></div>
+    <div class="modal" id="modal">
+        <span class="close-icon" onclick="closeModal()">&times;</span>
+        <h2 id="modal-title"></h2>
+        <p id="modal-content"></p>
+        <button class="close-btn" onclick="closeModal()">Close</button>
+    </div>
+    <script>
+        function showModal(title, content) {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-content').innerHTML = '<b>Guideline:</b> ' + content;
+            document.getElementById('modal').classList.add('show');
+            document.getElementById('overlay').classList.add('show');
+        }
+        function closeModal() {
+            document.getElementById('modal').classList.remove('show');
+            document.getElementById('overlay').classList.remove('show');
+        }
+    </script>
+    </body>
+    </html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NavJeevan - Medical Reminder</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f8f5;
+      text-align: center;
+      padding: 40px;
+    }
+
+    h2 {
+      color: #2e8b57;
+    }
+
+    form {
+      background: #fff;
+      display: inline-block;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    input, button {
+      padding: 10px;
+      margin: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    button {
+      background-color: #2e8b57;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #246c45;
+    }
+
+    .reminder-list {
+      margin-top: 30px;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .reminder-list li {
+      background: #d9f2e6;
+      padding: 10px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Set Your Medical Reminder</h2>
+
+  <form id="reminderForm">
+    <input type="text" id="medicine" placeholder="Medicine Name" required><br>
+    <input type="time" id="time" required><br>
+    <button type="submit">Add Reminder</button>
+  </form>
+
+  <ul class="reminder-list" id="reminderList"></ul>
+
+  <script>
+    const reminderForm = document.getElementById('reminderForm');
+    const reminderList = document.getElementById('reminderList');
+    let reminders = [];
+
+    // Convert time string to total minutes
+    function timeToMinutes(timeStr) {
+      const [hours, minutes] = timeStr.split(':').map(Number);
+      return hours * 60 + minutes;
+    }
+
+    // Check reminders every 30 seconds
+    setInterval(() => {
+      const now = new Date();
+      const currentMinutes = now.getHours() * 60 + now.getMinutes();
+
+      reminders.forEach((reminder, index) => {
+        if (!reminder.shown && timeToMinutes(reminder.time) === currentMinutes) {
+          alert(`⏰ Time to take your medicine: ${reminder.medicine}`);
+          reminders[index].shown = true;
+        }
+      });
+    }, 30000);
+
+    // Add reminder
+    reminderForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const medicine = document.getElementById('medicine').value;
+      const time = document.getElementById('time').value;
+
+      reminders.push({ medicine, time, shown: false });
+
+      const li = document.createElement('li');
+      li.textContent = `${medicine} at ${time}`;
+      reminderList.appendChild(li);
+
+      reminderForm.reset();
+    });
+  </script>
+</body>
+</html>

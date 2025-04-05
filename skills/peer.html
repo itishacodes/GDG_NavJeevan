@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Peer-to-Peer Learning</title>
+    <link rel="stylesheet" href="peer.css" />
+  </head>
+
+  <body>
+
+
+    <!-- ✅ Main Container -->
+    <div class="container">
+      <!-- 🗣️ Discussion Forum Section -->
+      <section class="discussion-forum">
+        <h2>🗣️ Discussion Forum</h2>
+        <p>Ask your questions and get responses from peers and mentors.</p>
+
+        <!-- New Question Input -->
+        <div class="question-box">
+          <textarea
+            id="questionInput"
+            placeholder="Type your question here..."
+          ></textarea>
+          <div style="margin-top: 10px">
+            <button onclick="startSpeechRecognition('questionInput')">
+              🎤 Speak
+            </button>
+            <button onclick="postQuestion()">Post</button>
+          </div>
+        </div>
+
+        <!-- Questions List -->
+        <div id="questionsList">
+          <!-- Questions will be dynamically displayed here -->
+        </div>
+      </section>
+
+      <!-- 🤝 Mentor Connect Section -->
+      <section class="mentor-connect">
+        <h2>🤝 Mentor Connect</h2>
+        <p>Find mentors to guide you in your journey.</p>
+
+        <div class="mentor-list">
+          <!-- Mentor Card 1 -->
+          <div class="mentor">
+            <h3>Dr. Ramesh Verma</h3>
+            <p>Expert in Agricultural Business</p>
+            <button onclick="requestGuidance('Dr. Ramesh Verma')">
+              Request Guidance
+            </button>
+          </div>
+
+          <!-- Mentor Card 2 -->
+          <div class="mentor">
+            <h3>Sunita Sharma</h3>
+            <p>Women Entrepreneurship Mentor</p>
+            <button onclick="requestGuidance('Sunita Sharma')">
+              Request Guidance
+            </button>
+          </div>
+
+          <!-- Mentor Card 3 -->
+          <div class="mentor">
+            <h3>Amit Patel</h3>
+            <p>Digital Marketing for Small Businesses</p>
+            <button onclick="requestGuidance('Amit Patel')">
+              Request Guidance
+            </button>
+          </div>
+        </div>
+
+        <!-- Modal for Mentor Message -->
+        <div id="mentorModal" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h3 id="mentorName"></h3>
+            <p>Enter your message to request guidance:</p>
+            <textarea
+              id="mentorMessage"
+              placeholder="Type your message..."
+            ></textarea>
+            <button onclick="sendRequest()">Send Request</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 🌟 Success Stories Section -->
+      <section class="success-stories">
+        <h2>🌟 Success Stories</h2>
+        <p>Read about people who changed their lives through skill training.</p>
+
+        <div class="carousel-container">
+          <button class="prev" onclick="prevStory()">&#10094;</button>
+
+          <div class="carousel">
+            <div class="story active">
+              <h3>Rajesh Kumar</h3>
+              <p>
+                "I learned digital marketing and now earn ₹30,000/month from my
+                small business."
+              </p>
+            </div>
+
+            <div class="story">
+              <h3>Anita Devi</h3>
+              <p>
+                "After completing the tailoring course, I started my boutique
+                and became financially independent."
+              </p>
+            </div>
+
+            <div class="story">
+              <h3>Manoj Singh</h3>
+              <p>
+                "The farming techniques training helped me double my crop yield
+                and increase my profits."
+              </p>
+            </div>
+          </div>
+
+          <button class="next" onclick="nextStory()">&#10095;</button>
+        </div>
+      </section>
+    </div>
+
+    <script src="peer.js"></script>
+  </body>
+</html>

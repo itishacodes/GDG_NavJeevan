@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Women-led Marketplace</title>
+    <link rel="stylesheet" href="market.css" />
+  </head>
+  <body>
+    <header>
+      <h1>🛍️ Women-led Marketplace</h1>
+      <a href="seller.html" class="seller-link">Seller Dashboard</a>
+    </header>
+
+    <section class="filters">
+      <select id="categoryFilter">
+        <option value="">All Categories</option>
+        <option value="Handmade Bags">Handmade Bags</option>
+        <option value="Pickles & Snacks">Pickles & Snacks</option>
+        <option value="Decor">Decor</option>
+        <option value="Embroidery">Embroidery</option>
+        <option value="Clothing">Clothing</option>
+      </select>
+
+      <select id="locationFilter">
+        <option value="">All Locations</option>
+        <option value="Assam">Assam</option>
+        <option value="Nagaland">Nagaland</option>
+        <option value="Manipur">Manipur</option>
+        <option value="Meghalaya">Meghalaya</option>
+      </select>
+    </section>
+
+    <section id="product-list" class="product-list"></section>
+
+    <script src="market.js"></script>
+  </body>
+</html>

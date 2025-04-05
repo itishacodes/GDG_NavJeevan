@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Women's Legal Rights</title>
+    <link rel="stylesheet" href="legal.css" />
+  </head>
+  <body>
+
+    <section class="legal-rights-section">
+      <h1>📜 Women's Legal Rights</h1>
+      <div class="card-container">
+        <script>
+          const rights = [
+            {
+              id: "modal1",
+              title: "Right against Domestic Violence",
+              desc: "The Protection of Women from Domestic Violence Act, 2005, safeguards women from physical, emotional, sexual, and economic abuse. The law provides immediate relief, protection orders, and legal support for women facing domestic violence, ensuring their safety and well-being.",
+            },
+            {
+              id: "modal2",
+              title: "Right to Free Legal Aid",
+              desc: "Under the Legal Services Authorities Act, 1987, women, especially those from disadvantaged backgrounds, are entitled to free legal assistance. The government has set up legal aid centers to help women seek justice without financial constraints.",
+            },
+            {
+              id: "modal3",
+              title: "Right to Dignity and Decency",
+              desc: "The law ensures that women are treated with dignity and respect, particularly during arrest or investigation. Only female officers are allowed to conduct physical searches, and no woman can be arrested after sunset or before sunrise without special permission from a magistrate.",
+            },
+            {
+              id: "modal4",
+              title: "Protection against Harassment",
+              desc: "The Sexual Harassment of Women at Workplace (Prevention, Prohibition, and Redressal) Act, 2013, protects women from sexual harassment at workplaces. It mandates the establishment of Internal Complaints Committees (ICC) in organizations to handle grievances effectively.",
+            },
+            {
+              id: "modal5",
+              title: "Right to Equal Pay",
+              desc: "The Equal Remuneration Act, 1976, ensures that women receive equal pay for equal work, prohibiting gender-based wage discrimination in both public and private sectors.",
+            },
+            {
+              id: "modal6",
+              title: "Right against Dowry",
+              desc: "The Dowry Prohibition Act, 1961, criminalizes the giving and receiving of dowry. It imposes strict penalties, including imprisonment and fines, for individuals involved in dowry-related offenses.",
+            },
+            {
+              id: "modal7",
+              title: "Right to Equality",
+              desc: "Articles 14 and 15 of the Indian Constitution guarantee gender equality. Article 14 ensures that every individual is treated equally before the law, while Article 15 prohibits discrimination based on gender.",
+            },
+            {
+              id: "modal8",
+              title: "Indecent Representation of Women (Prohibition) Act",
+              desc: "This law prohibits the depiction of women in a derogatory manner in advertisements, publications, and media. It aims to uphold the dignity of women and prevent their objectification.",
+            },
+            {
+              id: "modal9",
+              title: "Right against Being Stalked",
+              desc: "Under Section 354D of the Indian Penal Code, stalking—whether physical or online—is a punishable offense. Victims can file complaints against their stalkers, leading to strict legal action.",
+            },
+            {
+              id: "modal10",
+              title: "Maternity Benefits",
+              desc: "The Maternity Benefit Act, 1961, grants women paid maternity leave of up to 26 weeks, along with nursing breaks and job security, ensuring their well-being during pregnancy and after childbirth.",
+            },
+            {
+              id: "modal11",
+              title: "Property Rights",
+              desc: "The Hindu Succession Act, 2005, gives daughters equal rights in ancestral property, ensuring that they have the same inheritance rights as sons.",
+            },
+            {
+              id: "modal12",
+              title: "Right to Abortion",
+              desc: "The Medical Termination of Pregnancy (MTP) Act, 1971, allows women to seek safe and legal abortions under specific conditions, ensuring their reproductive rights and health.",
+            },
+            {
+              id: "modal13",
+              title: "Right to Education",
+              desc: "The Right to Education (RTE) Act, 2009, makes free and compulsory education a fundamental right for all children, including girls, up to the age of 14.",
+            },
+            {
+              id: "modal14",
+              title: "Right to Keep Identity Anonymous",
+              desc: "Victims of sexual offenses have the right to confidentiality, and their identities cannot be disclosed to protect their dignity and privacy.",
+            },
+            {
+              id: "modal15",
+              title: "Right to Maintenance",
+              desc: "Under Section 125 of the Criminal Procedure Code, a woman has the right to claim financial maintenance from her husband if she is unable to support herself.",
+            },
+            {
+              id: "modal16",
+              title: "Rights at Workplace",
+              desc: "Women are entitled to equal opportunities, maternity benefits, and protection from discrimination and harassment in the workplace.",
+            },
+            {
+              id: "modal17",
+              title: "Protection of Women from Domestic Violence Act, 2005",
+              desc: "This act provides legal protection to women from domestic abuse, including physical, emotional, verbal, and economic violence.",
+            },
+            {
+              id: "modal18",
+              title: "Child Marriage Prohibition",
+              desc: "The Prohibition of Child Marriage Act, 2006, declares child marriage illegal and imposes penalties on those who perform, permit, or promote child marriages.",
+            },
+            {
+              id: "modal19",
+              title: "Commission of Sati (Prevention) Act, 1987",
+              desc: "Strictly prohibits the practice of sati (self-immolation of widows) and its glorification, ensuring severe punishment for those involved.",
+            },
+            {
+              id: "modal20",
+              title: "Freedom of Movement",
+              desc: "Women have the constitutional right to move freely within the country, without restrictions based on gender.",
+            },
+            {
+              id: "modal21",
+              title: "Immoral Traffic (Prevention) Act",
+              desc: "This act is aimed at preventing human trafficking and sexual exploitation of women, ensuring stringent punishment for offenders.",
+            },
+            {
+              id: "modal22",
+              title: "Right to Confidentiality",
+              desc: "Victims of sexual crimes are protected under the law to maintain their anonymity and avoid public humiliation.",
+            },
+            {
+              id: "modal23",
+              title: "Right to Register Virtual Complaints",
+              desc: "Women can file police complaints online through email or dedicated portals without visiting a police station in person.",
+            },
+          ];
+
+          document.write(
+            rights
+              .map(
+                (r) => `
+          <div class="legal-card" onclick="openModal('${r.id}')">
+            <h2>${r.title}</h2>
+            <p>${r.desc.split(".")[0]}...</p>
+          </div>
+        `
+              )
+              .join("")
+          );
+        </script>
+      </div>
+    </section>
+
+    <script>
+      document.write(
+        rights
+          .map(
+            (r) => `
+      <div id="${r.id}" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('${r.id}')">&times;</span>
+          <h2>${r.title}</h2>
+          <p id="text${r.id}">${r.desc}</p>
+          <button onclick="speakText('text${r.id}')">🔊 Speak</button>
+        </div>
+      </div>
+    `
+          )
+          .join("")
+      );
+    </script>
+
+    <script src="legal.js"></script>
+  </body>
+</html>

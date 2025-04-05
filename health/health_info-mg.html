@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrition Plan & First Aid - NavJeevan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        .container {
+             width: 90%;
+            margin: auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            text-align: left;
+            margin-bottom: 3rem;
+        }
+        .item-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+        .item {
+            padding: 2.5rem;
+            background-color: #e8f5e9;
+            border-radius: 15px;
+            text-align: center;
+            cursor: pointer;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.4s ease, background 0.4s ease;
+            font-weight: bold;
+        }
+        .item:hover {
+            background-color: #c8e6c9;
+            transform: scale(1.1);
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+            z-index: 1000;
+            text-align: center;
+            width: 550px;
+            opacity: 0;
+            transition: all 0.4s ease-in-out;
+        }
+        .modal.show {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+            display: block;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 999;
+        }
+        .overlay.show {
+            display: block;
+        }
+        .close-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 1.5rem;
+        }
+        .close-icon {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            cursor: pointer;
+            font-size: 2rem;
+            color: #4CAF50;
+        }
+        b {
+            color: #2e7d32;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>NavJeevan - Nutrition Plan, First Aid, Health Tips & Medication Guide</h1>
+        <p>Select an option to view detailed information</p>
+    </header>
+    <div class="container">
+        <h2>Medication Guide</h2>
+        <div class="item-list">
+            <div class="item" onclick="showModal('Paracetamol', 'Used to treat pain and fever. Common side effects include nausea and rash.')">Paracetamol</div>
+            <div class="item" onclick="showModal('Ibuprofen', 'An anti-inflammatory used for pain relief. Side effects may include stomach irritation.')">Ibuprofen</div>
+            <div class="item" onclick="showModal('Antacids', 'Used to relieve heartburn and indigestion. Possible side effects include diarrhea or constipation.')">Antacids</div>
+            <div class="item" onclick="showModal('Cough Syrup', 'Helps in treating cough and cold. Overuse may cause drowsiness.')">Cough Syrup</div>
+            <div class="item" onclick="showModal('Antihistamines', 'Used to treat allergies. May cause drowsiness or dry mouth.')">Antihistamines</div>
+            <div class="item" onclick="showModal('Oral Rehydration Salts (ORS)', 'Used to treat dehydration. No major side effects if taken as directed.')">Oral Rehydration Salts (ORS)</div>
+            <div class="item" onclick="showModal('Multivitamins', 'Help in boosting immunity and overall health. Overuse may cause imbalances.')">Multivitamins</div>
+            <div class="item" onclick="showModal('Antibiotics', 'Used to treat bacterial infections. Overuse can lead to antibiotic resistance.')">Antibiotics</div>
+            <div class="item" onclick="showModal('Pain Relievers', 'Includes common painkillers. Excessive use may cause kidney issues.')">Pain Relievers</div>
+            <div class="item" onclick="showModal('Laxatives', 'Used to relieve constipation. Overuse can lead to dependency.')">Laxatives</div>
+            <div class="item" onclick="showModal('Diabetes Medication', 'Used to control blood sugar levels. Side effects vary depending on type.')">Diabetes Medication</div>
+            <div class="item" onclick="showModal('Blood Pressure Medication', 'Used to regulate blood pressure. May cause dizziness or fatigue.')">Blood Pressure Medication</div>
+        </div>
+    </div>
+    <div class="overlay" id="overlay" onclick="closeModal()"></div>
+    <div class="modal" id="modal">
+        <span class="close-icon" onclick="closeModal()">&times;</span>
+        <h2 id="modal-title"></h2>
+        <p id="modal-content"></p>
+        <button class="close-btn" onclick="closeModal()">Close</button>
+    </div>
+    <script>
+        function showModal(title, content) {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-content').innerHTML = '<b>Usage & Side Effects:</b> ' + content;
+            document.getElementById('modal').classList.add('show');
+            document.getElementById('overlay').classList.add('show');
+        }
+        function closeModal() {
+            document.getElementById('modal').classList.remove('show');
+            document.getElementById('overlay').classList.remove('show');
+        }
+    </script>
+    </body>
+    </html>
+    

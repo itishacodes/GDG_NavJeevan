@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Literacy</title>
+    <link rel="stylesheet" href="digital.css" />
+    <script defer src="digital.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>📖 Digital Literacy</h1>
+      <p>Master essential digital skills for a connected world</p>
+    </header>
+
+
+    <!-- Swapped: What to Learn? comes first -->
+    <section class="section what">
+      <div class="container">
+        <h2 class="section-title">What to Learn? 📌</h2>
+        <div class="topics">
+          <div class="topic" onclick="openVideo('v2TA6vc8yeM')">
+            <img
+              src="images/istockphoto-922593814-612x612.jpg"
+              alt="Basic Digital Skills"
+            />
+            <h3>Basic Digital Skills</h3>
+            <p>
+              Learn how to use smartphones, email, and social media effectively.
+            </p>
+          </div>
+          <div class="topic" onclick="openVideo('Thyds-RqNLw')">
+            <img
+              src="images/Online-Retail-chains-for-rurual-India-Entrackr.jpg"
+              alt="E-commerce"
+            />
+            <h3>Online Business & E-commerce</h3>
+            <p>
+              Discover how to sell products on Amazon, Etsy, and Facebook
+              Marketplace.
+            </p>
+          </div>
+          <div class="topic" onclick="openVideo('kywWhBXyFg0')">
+            <img
+              src="images/1520113276293 (1).jpg"
+              alt="Financial Management"
+            />
+            <h3>Financial Management</h3>
+            <p>Master budgeting, savings, and access government schemes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section how">
+      <div class="container">
+        <h2 class="section-title">How to Learn? 📚</h2>
+        <div class="steps">
+          <div class="step">
+            📱 <strong>Take Online Courses</strong><br />
+            Enroll in digital literacy courses on platforms like Coursera,
+            Udemy, and Khan Academy. They provide structured learning and
+            certifications.
+          </div>
+          <div class="step">
+            🧠 <strong>Practice Daily</strong><br />
+            Use digital tools like email, payments, and social media in your
+            daily life to build skills with regular practice.
+          </div>
+          <div class="step">
+            🏫 <strong>Join Workshops</strong><br />
+            Attend nearby training camps by local NGOs, schools, or government
+            initiatives. Learning with peers is fun and effective.
+          </div>
+          <div class="step">
+            🤝 <strong>Engage in Community Learning</strong><br />
+            Be part of a local or online group where people help each other with
+            doubts and share tips about using digital tools.
+          </div>
+          <div class="step">
+            🏢 <strong>Use Government & NGO Programs</strong><br />
+            Explore programs like PMGDISHA and Digital India that offer free
+            basic computer and smartphone usage training.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2025 Digital Literacy Initiative | Learn & Grow 🚀</p>
+    </footer>
+
+    <!-- Video Modal -->
+    <div id="videoModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeVideo()">&times;</span>
+        <iframe
+          id="videoFrame"
+          width="100%"
+          height="400"
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,133 @@
+/* Navigation Bar Styles */
+.navbar {
+  background: #5f4436;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar button {
+  background: white;
+  color: #5f5529;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.navbar button:hover {
+  background: #66582b;
+  color: white;
+}
+body {
+  font-family: "Georgia", serif;
+  background: #f9f3e4; /* Soft beige background for a rural touch */
+  margin: 0;
+  padding: 0;
+}
+
+.legal-rights-section {
+  padding: 30px;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+h1 {
+  color: #8b4513; /* Warm earthy brown */
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.legal-card {
+  background: #fff;
+  padding: 20px;
+  width: 320px;
+  border-radius: 10px;
+  border: 2px solid #a86c4f; /* Subtle brown border */
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.legal-card:hover {
+  transform: scale(1.05);
+  box-shadow: 4px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.legal-card h2 {
+  color: #702f1c; /* Deep rustic brown */
+  font-size: px;
+  font-weight: bold;
+}
+
+.legal-card p {
+  font: size 25px; /* Increased font size */
+  color: #333;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 30px;
+  border-radius: 12px;
+  width: 80%;
+  max-width: 600px;
+  position: relative;
+  text-align: center;
+  border: 2px solid #a86c4f; /* Matching border */
+}
+
+.close {
+  color: #702f1c;
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  font-size: 26px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: black;
+}
+
+button {
+  background-color: #702f1c; /* Deep earthy brown */
+  color: white;
+  padding: 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  margin-top: 10px;
+  font: size 20px;
+}
+
+button:hover {
+  background-color: #5a2414;
+}

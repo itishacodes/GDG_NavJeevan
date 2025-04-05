@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seller Dashboard</title>
+    <link rel="stylesheet" href="market.css" />
+  </head>
+  <body>
+    <header>
+      <h1>📦 Seller Dashboard</h1>
+      <a href="market.html" class="seller-link">Go to Marketplace</a>
+    </header>
+
+    <!-- Add Product Form -->
+    <section class="form-section">
+      <h2>Add New Product</h2>
+      <form id="productForm">
+        <input type="text" id="name" placeholder="Product Name" required />
+        <textarea
+          id="description"
+          placeholder="Description"
+          required
+        ></textarea>
+        <input type="text" id="price" placeholder="Price (₹)" required />
+        <input type="text" id="seller" placeholder="Your Name" required />
+        <input
+          type="text"
+          id="location"
+          placeholder="Your State/District"
+          required
+        />
+        <input
+          type="text"
+          id="category"
+          placeholder="Category (e.g. Decor)"
+          required
+        />
+        <input type="tel" id="phone" placeholder="WhatsApp Number" required />
+        <input type="url" id="image" placeholder="Image URL" required />
+        <button type="submit">➕ Add Product</button>
+      </form>
+    </section>
+
+    <!-- Product Summary -->
+    <section class="summary-section">
+      <h2>🗂️ Your Listings</h2>
+      <div class="seller-summary">
+        <p id="summary-stats">Loading summary...</p>
+        <button id="clearAll" class="danger-btn">🗑️ Clear All Products</button>
+      </div>
+    </section>
+
+    <!-- Product List -->
+    <section id="seller-products" class="product-list"></section>
+
+    <script src="market.js"></script>
+  </body>
+</html>

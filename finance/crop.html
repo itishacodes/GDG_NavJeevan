@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crop Price Estimator</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="crop-price-estimator.css" />
+  <script src="crop.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <div class="card shadow-lg p-4">
+      <h1 class="text-center title">🌾 Crop Price Estimator</h1>
+      
+      <label class="form-label">Select Crop:</label>
+      <select id="cropType" class="form-select">
+        <option value="wheat">Wheat</option>
+        <option value="rice">Rice</option>
+        <option value="maize">Maize</option>
+        <option value="soybean">Soybean</option>
+        <option value="cotton">Cotton</option>
+        <option value="sugarcane">Sugarcane</option>
+        <option value="barley">Barley</option>
+        <option value="millets">Millets</option>
+        <option value="groundnut">Groundnut</option>
+        <option value="sunflower">Sunflower</option>
+      </select>
+
+      <label class="form-label mt-3">Area of Land (acres):</label>
+      <input type="number" id="landArea" class="form-control" placeholder="Enter land area" />
+
+      <label class="form-label mt-3">Select State:</label>
+      <select id="state" class="form-select">
+        <option value="UP">Uttar Pradesh</option>
+        <option value="MH">Maharashtra</option>
+        <option value="PB">Punjab</option>
+        <option value="RJ">Rajasthan</option>
+        <option value="MP">Madhya Pradesh</option>
+        <option value="GJ">Gujarat</option>
+        <option value="TN">Tamil Nadu</option>
+        <option value="AP">Andhra Pradesh</option>
+        <option value="KA">Karnataka</option>
+        <option value="WB">West Bengal</option>
+      </select>
+
+      <button class="btn btn-primary mt-4 w-100" onclick="estimateCropPrice()">Estimate Price</button>
+
+      <div id="cropResult" class="result-box mt-4 p-3 text-center"></div>
+    </div>
+  </div>
+</body>
+</html>

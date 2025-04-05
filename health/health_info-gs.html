@@ -1,0 +1,260 @@
+<!-- ApnaKhet Project -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NavJeevan - Farmer Education Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,hi,mr,te',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+      
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: #4CAF50;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .navbar nav a {
+            margin-left: 20px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        .navbar nav a:hover {
+            color: #d4edda;
+        }
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background: url('assets/img/farmers.jpg') no-repeat center center/cover;
+            color: white;
+            box-shadow: inset 0 0 0 2000px rgba(53, 53, 31, 0.5);
+        }
+        .hero h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .box {
+            width: 75%;
+            margin: auto;
+            background: rgb(146, 180, 106);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            text-align: left;
+            margin-bottom: 3rem;
+        }
+
+        .container {
+            width: 90%;
+            margin: auto;
+            background: rgb(184, 205, 162);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            text-align: left;
+            margin-bottom: 3rem;
+        }
+
+        .button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #61da25;
+}
+
+
+        .item-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+        .item {
+            padding: 2.5rem;
+            background-color: #e8f5e9;
+            border-radius: 15px;
+            text-align: center;
+            cursor: pointer;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.4s ease, background 0.4s ease;
+            font-weight: bold;
+        }
+        .item:hover {
+            background-color: #c8e6c9;
+            transform: scale(1.1);
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+            z-index: 1000;
+            text-align: center;
+            width: 550px;
+            opacity: 0;
+            transition: all 0.4s ease-in-out;
+        }
+        .modal.show {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+            display: block;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 999;
+        }
+        .overlay.show {
+            display: block;
+        }
+        .close-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 1.5rem;
+        }
+        .close-icon {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            cursor: pointer;
+            font-size: 2rem;
+            color: #4CAF50;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<!-- <header>
+    <h1>ApnaKhet - Farmer Education Hub</h1>
+    <p>Select a topic to learn more</p>
+</header> -->
+
+<header>
+    <div class="navbar">
+        <h1>NavJeevan</h1>
+        <nav>
+            <a href="#health">Health Schemes</a>
+            <a href="#education">Education Schemes</a>
+            <a href="#finance">Finance Schemes</a>
+            <a href="#skill">Skill Development Schemes</a>
+        </nav>
+        <div id="google_translate_element"></div>
+    </div>
+</header>
+
+<section class="hero">
+    <h2>Empowering Rural Communities Through Government Schemes</h2>
+    <h3>"Transforming Lives with Access to Finance, Healthcare, Education, and Skill Development."</h3>
+</section>
+
+
+<section id="health"> 
+</br>
+<div class="box">
+ <h1>Government Health Schemes</h1>
+<br/>
+
+<div class="container">
+  <h2 style="display: inline;">Ayushman Bharat - Pradhan Mantri Jan Arogya Yojana (PM-JAY)</h2> 
+  </br>
+  <h3>• Provides free health insurance of up to ₹5 lakh per family per year for economically weaker sections.</h3>
+  <h3>• Covers hospitalization costs for secondary and tertiary care.</h3>
+<a href="https://youtu.be/zbgU0_PhyIk?si=srPO1sviW1_xf7ig" class="button">Know More</a>
+</div>
+
+<div class="container">
+<h2 style="display: inline;">Rashtriya Swasthya Bima Yojana (RSBY)</h2> 
+</br>
+<h3>• Offers health insurance of ₹30,000 per family for Below Poverty Line (BPL) families.</h3>
+<h3>• Covers hospitalization and medical expenses for enrolled beneficiaries.</h3>
+<a href="https://youtu.be/lRyXlvIJFWI?si=KYKdp3zJeoKBEbVe" class="button">Know More</a>
+</div>
+
+<div class="container">
+<h2 style="display: inline;">Pradhan Mantri Suraksha Bima Yojana (PMSBY)</h2> 
+</br>
+<h3>• Accident insurance scheme providing coverage of up to ₹2 lakh for accidental death or disability.</h3>
+<h3>• Premium: Only ₹20 per year per person.</h3>
+<a href="https://youtu.be/hVw1WVacVZo?si=hfvYi8cnMsEvI8T7" class="button">Know More</a>
+</div>
+
+<div class="container">
+<h2 style="display: inline;">Janani Suraksha Yojana (JSY)</h2> 
+</br>
+<h3>• Aimed at promoting institutional deliveries for pregnant women.</h3>
+<h3>• Provides financial assistance to pregnant women, especially in rural areas, to encourage safer childbirth.</h3>
+<a href="https://youtu.be/P-cPw-wOABo?si=UDzXU85jyey4ggPk" class="button">Know More</a>
+</div>
+
+<div class="container">
+<h2 style="display: inline;">Mission Indradhanush</h2> 
+</br>
+<h3>• A nationwide vaccination program ensuring immunization for children under 2 years and pregnant women.</h3>
+<h3>• Covers diseases like polio, tuberculosis, measles, and hepatitis B.</h3>
+<a href="https://youtu.be/Ulf8E1XnhgI?si=gL1tFQlQGlvuzzIN" class="button">Know More</a>
+</div>
+</section>
+</div>
+
+</br></br>
+<footer>
+    <p>&copy; 2025 ApnaKhet | Empowering Farmers for a Better Tomorrow</p>
+</footer>
+
+</body>
+</html>

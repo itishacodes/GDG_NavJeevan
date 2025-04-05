@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Local Training Hubs</title>
+    <link rel="stylesheet" href="training.css" />
+  </head>
+  <body>
+
+
+    <h1>Local Training Hubs</h1>
+
+    <!-- Search Bar -->
+    <input
+      type="text"
+      id="searchBar"
+      placeholder="Search by location or course..."
+    />
+
+    <!-- Training Hub List -->
+    <div id="hubContainer"></div>
+
+    <!-- Modal for Applying -->
+    <div id="applyModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 id="modalHubTitle"></h2>
+        <p><strong>Location:</strong> <span id="modalHubLocation"></span></p>
+        <p>
+          <strong>Courses Offered:</strong> <span id="modalHubCourses"></span>
+        </p>
+
+        <!-- Application Form -->
+        <form id="applyForm">
+          <h3>Apply for Training</h3>
+          <input
+            type="text"
+            id="applicantName"
+            placeholder="Your Name"
+            required
+          />
+          <input
+            type="number"
+            id="applicantAge"
+            placeholder="Your Age"
+            required
+          />
+          <input
+            type="text"
+            id="applicantSkills"
+            placeholder="Your Skills"
+            required
+          />
+          <input
+            type="tel"
+            id="applicantPhone"
+            placeholder="Phone Number"
+            required
+          />
+          <input
+            type="email"
+            id="applicantEmail"
+            placeholder="Email"
+            required
+          />
+
+          <button type="submit" class="submit-btn">Submit Application</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Add New Training Hub -->
+    <h2>Register a New Training Hub</h2>
+    <form id="registerHubForm">
+      <input
+        type="text"
+        id="hubName"
+        placeholder="Training Hub Name"
+        required
+      />
+      <input type="text" id="hubLocation" placeholder="Location" required />
+      <input
+        type="text"
+        id="hubCourses"
+        placeholder="Courses Offered"
+        required
+      />
+      <button type="submit" class="submit-btn">Register Hub</button>
+    </form>
+
+    <script src="training.js"></script>
+  </body>
+</html>
