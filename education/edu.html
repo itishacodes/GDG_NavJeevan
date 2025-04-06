@@ -7,18 +7,7 @@
     <title>NavJeevan - Farmer Education Hub</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'en',
-                includedLanguages: 'en,hi,mr,te',
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-            }, 'google_translate_element');
-        }
-    </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">    
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -155,6 +144,9 @@
     <p>Select a topic to learn more</p>
 </header> -->
 
+  <!-- Google Translate Widget -->
+<div id="google_translate_element"></div>
+
 <header>
   <div class="navbar">
       <h1>NavJeevan - Farmer Education Hub</h1>
@@ -255,5 +247,21 @@
         document.getElementById('overlay').classList.remove('show');
     }
 </script>
+
+    <script>
+        function toggleChatbot() {
+          const chatbot = document.getElementById("chatbot-window");
+          chatbot.style.display = chatbot.style.display === "block" ? "none" : "block";
+        }
+        
+        function googleTranslateElementInit() {
+          new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            includedLanguages: 'en,hi,gu,bn,kn,ml,mr,pa,ta,te,ur,or,as,sd,ne,sa,mai,raj',
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+          }, 'google_translate_element');
+        }
+    </script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>

@@ -55,6 +55,10 @@
     }
   </style>
 </head>
+
+    <!-- Google Translate Widget -->
+  <div id="google_translate_element"></div>
+  
 <body>
   <h2>Set Your Medical Reminder</h2>
 
@@ -106,5 +110,21 @@
       reminderForm.reset();
     });
   </script>
+
+  <script>
+    function toggleChatbot() {
+      const chatbot = document.getElementById("chatbot-window");
+      chatbot.style.display = chatbot.style.display === "block" ? "none" : "block";
+    }
+
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,hi,gu,bn,kn,ml,mr,pa,ta,te,ur,or,as,sd,ne,sa,mai,raj',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+  </script>
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
